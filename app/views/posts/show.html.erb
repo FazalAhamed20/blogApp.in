@@ -1,1 +1,13 @@
-<h1>to show individual posts</h1>
+<%=  @post.title %>
+<br>
+<%=@post.body%>
+<br>
+<p> Category : <%= link_to @post.category.name , category_path(@post.category.id)%> </p>
+
+<br>
+<%= link_to "Edit", edit_post_path(@post.id)%>
+<%= link_to "Delete", @post, data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this post?" }, method: :delete %>
+
+
+
+<%= link_to "Go Back", posts_path%>

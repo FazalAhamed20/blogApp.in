@@ -1,0 +1,10 @@
+<h1>Posts</h1>
+
+<% if @posts.any? %>
+  <% @posts.each do |post| %>
+    <%= link_to post.title, post_path(post) %>
+    <br>
+  <% end %>
+<% else %>
+  <p>No posts available</p>
+<% end %>
