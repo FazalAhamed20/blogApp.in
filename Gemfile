@@ -2,7 +2,7 @@ source "https://rubygems.org"
 
 # gem "activeadmin", "~> 3.0"
 # gem "devise"
-gem "activeadmin"
+
 
 
 

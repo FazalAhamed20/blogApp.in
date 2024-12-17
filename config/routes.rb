@@ -1,13 +1,16 @@
 Rails.application.routes.draw do
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  
-  get "categories/index"
-  get "categories/edit"
-  get "categories/new"
-  get "categories/show"
+  get "pages/home"
+  get "pages/blog"
+  get "pages/contact"
+  get "pages/resources"
+
   root "home#index"
   resources :posts
   resources :categories
+  get "/home",to: "pages#home"
+  get "/blog",to: "pages#blog"
+  get "/contact",to: "pages#contact"
+  get "/resources",to: "pages#resources"
   # get "home/index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -20,5 +23,5 @@ Rails.application.routes.draw do
   # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
 
   # Defines the root path route ("/")
-  ActiveAdmin.routes(self)
+ 
 end
